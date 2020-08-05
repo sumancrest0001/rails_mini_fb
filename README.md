@@ -1,14 +1,17 @@
 ## Ruby On Rails: Micro-Facebook
+This is a collaborative project from the microverse curriculum. This is a mini facebook project with minimal features like authentication with devise and omniauth-facebook, creating posts, like and comment posts, sending and accepting friend requests, and testing.
 
-## Microverse
-
-This is the 8th and Final Project of the Microverse Ruby on Rails Curriculum at Microverse - @microverseinc
-
-    This project consists of building a Facebook clone with minimal features using Rails 5
 ## Features of the App
     User [friendships, posts,comments, likes] modules and functionalities.
     The project was completed using Bootstrap, Devise, RSpec, Omniauth and PostgreSQL.
     
+## Live version of the App
+  https://ancient-woodland-03904.herokuapp.com/signup
+
+## [Screenshots]
+
+  ![img](app/assets/images/indexpage.png)
+
 ## Live version of the App
   https://ancient-woodland-03904.herokuapp.com/signup
 
@@ -18,7 +21,7 @@ This is the 8th and Final Project of the Microverse Ruby on Rails Curriculum at 
 ## How to install
 
 1. Open Terminal
-2. git clone https://github.com/noomdalv/rails_mini_fb.git
+2. git clone https://github.com/sumancrest0001/rails_mini_fb
 3. cd rails_final_project
 4. run rails db:migrate
 5. run bundle install
@@ -26,9 +29,12 @@ This is the 8th and Final Project of the Microverse Ruby on Rails Curriculum at 
 
 
 ## Contributors
-### sumancrest0001 (https://github.com/sumancrest0001)
+### sumancrest0001 
+- [github](https://github.com/sumancrest0001)
+- [linkedIn](https://www.linkedin.com/in/suman-shrestha0001/)
 
-### noomdalv (https://github.com/noomdalv)
+### noomdalv
+- [github](https://github.com/noomdalv)
 
 
 #### License

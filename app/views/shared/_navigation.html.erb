@@ -1,9 +1,10 @@
+
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
     <%= link_to "Facebook", root_path, id: "logo" %>
+    <% if signed_in? %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <% if signed_in? %>
           <li><%= link_to "Posts", posts_path %></li>
           <li class="notification-icon"><%= link_to(content_tag( :i, nil, class: 'fa fa-bell notification-bell' ), friendships_path) %>
             <% if current_user.friend_requests.count.positive? %>
@@ -30,11 +31,24 @@
             </ul>
 
           </li>
+        </ul>
+      </nav>
         <% else %>
-          <li><%= button_to "Sign Up", new_user_registration_path, method: :get, id: "signup-button", class: "signin-signup-button"%></li>
-          <li><%= button_to "Sign In", new_user_session_path, method: :get, class: "signin-signup-button"%></li>
+      <nav class="navbar-right login-section">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-form my-2 my-lg-0"}) do |f| %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", id: "inputEmail" %>
+          </div>
+
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", id: "inputPassword" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Sign In", class: 'my-2 my-sm-0 signin-btn'%>
+          </div>      
         <% end %>
-      </ul>
     </nav>
+</div>
+ <% end %>
   </div>
 </header>

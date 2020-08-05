@@ -1,11 +1,9 @@
 <main class="container-fluid">
-  <div class="row">
+
+  <div class="row mt-5">
     <div class="col-md-3 profile-section text-center">
-      <h3>User Profile</h3>
-      <h1>
-        <%= gravatar_for(current_user, 150)  %>
-        <%= current_user.name%>
-      </h1>
+      <%= image_tag(gravatar_for(current_user, 150), alt: current_user.name) %>
+      <h1><%= current_user.name%></h1>
     </div>
 
     <div class="col-md-6 bg-success new-post">
@@ -14,27 +12,24 @@
         <%= f.text_area :body, class: 'form-control', placeholder: "What's in your mind?"%><br>
 
         <%= f.submit "Post", class: "btn btn-primary btn-md pull-right" %>
+        <span class="picture">
+          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        </span>
+        <script type="text/javascript">
+          $('#post_picture').bind('change', function() {
+            var size_in_megabytes = this.files[0].size/1024/1024;
+            if (size_in_megabytes > 5) {
+              alert('Maximum file size is 5MB. Please choose a smaller file.');
+            }
+          });
+        </script>
+
       <% end %>
     </div>
 
     <% @user_posts.each do |post| %>
-      <div class="row post">
-        <div class="col-md-12">
-          <div class="well post-container">
-            <div class="post-user">
-              <small>
-                <b>Author:</b>
-                <strong><%= link_to post.user.name, user_path(post.user)%></strong>,
-                <%= time_ago_in_words(post.created_at) %> ago.
-              </small>
-            </div>
-
-            <div class="post-body">
-              <%= post.body %>
-            </div>
-          </div>
-          <%= render partial: 'shared/like_comment', locals: {post: post} %>
-        </div>
+      <div class="col-md-12 post">
+        <%= render partial: 'shared/post', locals: {post: post} %>
       </div>
     <%end %>
   </div>
