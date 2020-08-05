@@ -4,6 +4,9 @@ This is a collaborative project from the microverse curriculum. This is a mini f
 ## Features of the App
     User [friendships, posts,comments, likes] modules and functionalities.
     The project was completed using Bootstrap, Devise, RSpec, Omniauth and PostgreSQL.
+    
+## Live version of the App
+  https://ancient-woodland-03904.herokuapp.com/signup
 
 ## [Screenshots]
 
