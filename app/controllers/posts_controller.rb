@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :logged_in?, only: %i[show]
   before_action :authenticate_user!
+
   before_action :set_post, only: %i[show destroy]
 
   def new; end
@@ -40,6 +42,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:body)
+    params.require(:post).permit(:body, :picture)
   end
 end
