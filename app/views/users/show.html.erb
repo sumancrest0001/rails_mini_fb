@@ -1,41 +1,40 @@
 <main class="container-fluid">
-
-  <div class="row mt-5">
-    <div class="col-md-3 profile-section text-center">
-      <%= image_tag(gravatar_for(current_user, 150), alt: current_user.name) %>
-      <h1><%= current_user.name%></h1>
+    <div class="cover-image">
+      <div class="profile-image">
+        <%= image_tag(gravatar_for(@user, 50), alt: @user.name, class: 'user-image') %>
+        <h2 class="user-name"><%=@user.name%></h2>
+      </div>
     </div>
-
-    <div class="col-md-6 bg-success new-post">
+    <div class="new-post">
       <div class="row create-post">
         <%= form_for @post do |f| %>
-        <%= f.text_area :body, class: 'form-control', placeholder: "What's in your mind?"%><br>
+          <%= f.text_area :body, class: 'form-control', placeholder: "What's in your mind?"%><br>
 
-        <%= f.submit "Post", class: "btn btn-primary btn-md pull-right" %>
-        <span class="picture">
-          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-        </span>
-        <script type="text/javascript">
-          $('#post_picture').bind('change', function() {
-            var size_in_megabytes = this.files[0].size/1024/1024;
-            if (size_in_megabytes > 5) {
-              alert('Maximum file size is 5MB. Please choose a smaller file.');
-            }
-          });
-        </script>
+          <%= f.submit "Post", class: "btn btn-primary btn-md pull-right" %>
+          <span class="picture">
+            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+          </span>
+          <script type="text/javascript">
+            $('#post_picture').bind('change', function() {
+              var size_in_megabytes = this.files[0].size/1024/1024;
+              if (size_in_megabytes > 5) {
+                alert('Maximum file size is 5MB. Please choose a smaller file.');
+              }
+            });
+          </script>
+        <% end %>
+      </div>
 
-      <% end %>
+      <% @user_posts.each do |post| %>
+        <div class="row post">
+          <div class="col-md-12">
+          <%= render partial: 'shared/post', locals: {post: post} %>
+          </div>
+        </div>
+      <%end %>
     </div>
 
-    <% @user_posts.each do |post| %>
-      <div class="col-md-12 post">
-        <%= render partial: 'shared/post', locals: {post: post} %>
-      </div>
-    <%end %>
-  </div>
-
-  <div class="col-md-2 ads-section">
-    <h1>Ads Section</h1>
-  </div>
-</div>
+    <div class="col-md-2 ads-section">
+      <h1>Ads Section</h1>
+    </div>
 </main>

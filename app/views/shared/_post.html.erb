@@ -1,6 +1,6 @@
 <div class="single-post">
   <div class="post-header">
-  <%= image_tag(gravatar_for(post.user, 50), alt: post.user.name, class: 'author-image') %>
+    <%= image_tag(gravatar_for(post.user, 50), alt: post.user.name, class: 'author-image') %>
     <div class="header-text">
       <div class="author-name"> <%= link_to post.user.name.humanize, user_path(post.user) %></div>
       <p class="post-date"><%= time_ago_in_words(post.created_at) %> ago</p>

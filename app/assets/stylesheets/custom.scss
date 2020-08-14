@@ -104,9 +104,12 @@ body {
 }
 
 .new-post {
+  width: 60%;
   background-color: #f5f2f2;
   padding: 20px;
   padding-bottom: 0;
+  margin: auto;
+  margin-top: 50px;
 }
 .create-post {
   padding: 20px;
@@ -156,8 +159,8 @@ body {
   margin-bottom: 15px;
 }
 .post-image {
-  width: 300x;
-  height: 300px;
+  width: 300px;
+  height: 350px;
 }
 
 .horizontal-line {
@@ -269,4 +272,39 @@ body {
   text-align: center;
   border-radius: none;
   color: #fff;
+}
+
+// User profile page
+
+.cover-image {
+  height: 40vh;
+  position: relative;
+  background-image: url(asset-path('profile-cover.webp'));
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
+.profile-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 40%;
+  bottom: -30%;
+  z-index: 10;
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 10px 0;
 }
