@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   get 'users/index'
   resources :users
   resources :contents
-  resources :posts
-  delete '/dislike', to: 'likes#unlike'
+  resources :posts do 
+    resources :likes, only: [:create]
+    post '/dislike', to: 'likes#dislike'
+  end
   resources :comments, only: [:create]
-  resources :likes
   resources :friendships, only: [:create, :destroy, :index]
   post '/delete_pending_request', to: 'friendships#delete_pending_request'
   post '/acceptrequest', to: 'friendships#accept_request'

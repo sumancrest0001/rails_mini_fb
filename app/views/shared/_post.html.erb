@@ -13,12 +13,12 @@
   <div class="horizontal-line"><div>
 	<div class="like-comment">
     <% if current_user.likes?(post) %>
-      <%= link_to dislike_path(post_id: post.id), method: :delete, class: 'unlike-button unlike-button-color' do %>
+      <%= link_to post_dislike_path(post), method: :post, class: 'unlike-button unlike-button-color' do %>
         <i class="fa fa-thumbs-down icon"></i>
         <span>Unlike</span>
       <% end %>
 		<% else %>
-    <%= link_to dislike_path(post_id: post.id), method: :post, class: 'like-button button-color' do %>
+    <%= link_to post_likes_path(post), method: :post, class: 'like-button button-color' do %>
       <i class="fa fa-thumbs-up icon"></i>
       <span>Like</span>
     <% end %>
