@@ -2,6 +2,7 @@
 
 module ApplicationHelper
   include UsersHelper
+  include PostsHelper
   
   def resource_name
     :user
