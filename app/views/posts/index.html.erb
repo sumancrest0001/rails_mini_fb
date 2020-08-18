@@ -3,11 +3,14 @@
     <div class="col-md-3 profile-section text-center">
       <h3>My Profile</h3>
         <%= image_tag(gravatar_for(current_user, 150), alt: current_user.name, class: 'user-image') %>
-        <h3><%= current_user.name %></h3>
+        <h3><%= link_to current_user.name.humanize, user_path(current_user) %></h3>
       <div class= "horizontal-line"></div>
       <div class="friends-profile-image">
         <% friend_profiles.each do |friend_profile| %>
-          <%= image_tag(gravatar_for(friend_profile, 80), alt: friend_profile.name, class: 'user-image') %>
+          <div class="friend-card">
+            <%= image_tag(gravatar_for(friend_profile, 80), alt: friend_profile.name, class: 'user-image') %>
+            <h3><%=link_to friend_profile.name, user_path(friend_profile), class: 'author-name'%></h3>
+          </div>
         <% end %>
       </div>
     </div>

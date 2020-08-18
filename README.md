@@ -23,9 +23,10 @@ This is a collaborative project from the microverse curriculum. This is a mini f
 1. Open your Terminal
 2. run `git clone https://github.com/sumancrest0001/rails_mini_fb`
 3. `cd rails_final_project`
-4. run `rails db:migrate`
-5. run `bundle install`
-6. run `rails server`
+4. run `bundle install`
+5. run `rails db:create`
+6. run `rails db:migrate`
+7. run `rails server`
 
 ## How to run Rspec Tests
 - run `rspec` command.
@@ -44,7 +45,14 @@ This is a collaborative project from the microverse curriculum. This is a mini f
 - [ ] Add action cable for the comment section.
 - [ ] Add user profile.
 
-## If you like our work, show some love. We always welcome feedbacks and suggestions.
-#### License
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/sumancrest0001/rails_mini_fb/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
 
 MIT Licensed
