@@ -12,8 +12,7 @@ This is a collaborative project from the microverse curriculum. This is a mini f
 
   ![img](app/assets/images/indexpage.png)
 
-## Live version of the App
-  https://ancient-woodland-03904.herokuapp.com/signup
+## [Live version of the App](https://facebook-mini.herokuapp.com/)
 
 ## Languages Used: 
 ### Ruby, HTML & CSS
