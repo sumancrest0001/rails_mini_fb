@@ -95,3 +95,6 @@ public/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+
+# Ignore application configuration
+/config/application.yml
